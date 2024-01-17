@@ -45,12 +45,12 @@ function muc() {
 }
 
 # Run ls immediately when you change directory.
-function cl() {
+function cd() {
   if [ -d $1 ]; then
-    cd $1
+    builtin cd $1
     ls
   else 
-    echo $1 No such file or directory
+    echo No such file or directory: $1
   fi
 }
 
@@ -59,13 +59,13 @@ function dir() {
 }
 
 function i() {
-  cl ~/i/$1
+  cd ~/i/$1
 }
 
 function f() {
-  cl ~/f/$1
+  cd ~/f/$1
 }
 
 function w() {
-  cl ~/w/$1
+  cd ~/w/$1
 }
